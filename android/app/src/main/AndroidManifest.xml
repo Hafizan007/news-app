@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.new.main">
+    package="com.news.appe">
    <application
         android:label="technical_test"
         android:name="${applicationName}"

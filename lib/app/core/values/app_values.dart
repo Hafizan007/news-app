@@ -39,11 +39,12 @@ abstract class AppValues {
   static const double radius_4 = 4;
   static const double radius_6 = 6;
   static const double radius_12 = 12;
+  static const double radius_10 = 10;
 
   //list
-  static const double listBottomEmptySpace = 200;
+  static const double listBottomEmptySpace = 100;
 
-  static const double extraSmallTextSize = 12;
+  static const double extraSmallTextSize = 10;
   static const double smallTextSize = 12;
   static const double mediumTextSize = 14;
   static const double largeTextSize = 16;
@@ -67,4 +68,10 @@ abstract class AppValues {
   static const double padding_2 = 2;
   static const double padding_3 = 3;
   static const double buttonVerticalPadding = 12;
+
+  //icon
+  static const double iconSize5 = 5;
+
+  //image
+  static const double newsHeroImageHeight = 114;
 }

@@ -49,4 +49,19 @@ class AppTextStyle {
       fontSize: AppValues.largeTextSize,
     );
   }
+
+  static TextStyle smallTextUnderline({
+    Color color = AppColors.textColorPrimary,
+    FontWeight fontWeight = FontWeight.w600,
+  }) {
+    return GoogleFonts.lexendDeca(
+      decoration: TextDecoration.underline,
+      color: Colors.transparent,
+      decorationColor: color,
+      decorationThickness: 1.5,
+      shadows: [Shadow(offset: const Offset(0, -2), color: color)],
+      fontWeight: fontWeight,
+      fontSize: AppValues.smallTextSize,
+    );
+  }
 }

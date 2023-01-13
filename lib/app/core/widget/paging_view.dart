@@ -12,7 +12,7 @@ class PagingView extends StatelessWidget {
 
   ScrollController? scrollController;
 
-  late final _debouncer = Debouncer(milliseconds: 500);
+  late final _debouncer = Debouncer(milliseconds: 200);
 
   PagingView({
     Key? key,
@@ -54,6 +54,9 @@ class PagingView extends StatelessWidget {
 
   _getScrollableView() {
     return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(
+        parent: AlwaysScrollableScrollPhysics(),
+      ),
       controller: scrollController,
       child: Column(
         children: [

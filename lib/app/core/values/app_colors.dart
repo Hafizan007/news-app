@@ -19,4 +19,8 @@ abstract class AppColors {
 
   static const Color fieldBorderColor = Color(0xFFE1E1E1);
   static const Color fieldPrimaryColor = Color(0xFFF4F4F4);
+
+  static const Color textBlueColor = Color(0xFF0093AD);
+  static const Color textBlackColor400 = Color(0xFF8E8E8E);
+  static const Color blueSkyColor = Color(0xFFEBF6F8);
 }

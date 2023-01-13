@@ -19,6 +19,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   dio: ^4.0.5
   equatable: ^2.0.5
+  fancy_shimmer_image: ^2.0.2
   flutter:
     sdk: flutter
   flutter_dotenv: ^5.0.2

@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class RequestHeaderInterceptor extends InterceptorsWrapper {
   @override
@@ -12,8 +13,7 @@ class RequestHeaderInterceptor extends InterceptorsWrapper {
   Future<Map<String, String>> getCustomHeaders() async {
     final customHeaders = {
       'content-type': 'application/json',
-      'Authorization':
-          'Bearer c22c5ea81685e1b6459cb0d03c89c6ad73a1015ea0407401f4d61fa501c1b867'
+      'X-Api-Key': '${dotenv.env["API_KEY"]}'
     };
 
     return customHeaders;

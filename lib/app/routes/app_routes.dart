@@ -3,14 +3,12 @@ part of 'app_pages.dart';
 
 abstract class Routes {
   Routes._();
-  static const MAIN = _Paths.MAIN;
   static const NEWS = _Paths.NEWS;
   static const DETAIL_NEWS = _Paths.DETAIL_NEWS;
 }
 
 abstract class _Paths {
   _Paths._();
-  static const MAIN = '/main';
   static const NEWS = '/news';
   static const DETAIL_NEWS = '/detail-news';
 }

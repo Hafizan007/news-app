@@ -18,7 +18,6 @@ Exception handleError(String error) {
 }
 
 Exception handleDioError(DioError dioError) {
-  print(dioError.type);
   switch (dioError.type) {
     case DioErrorType.cancel:
       return AppException(message: "Request to API server was cancelled");
@@ -48,8 +47,6 @@ Exception _parseDioErrorResponse(DioError dioError) {
     }
     status = dioError.response?.data["status"];
     serverMessage = dioError.response?.data["message"];
-
-    print('aku' + serverMessage.toString());
   } catch (e, s) {
     logger.i("$e");
     logger.i(s.toString());

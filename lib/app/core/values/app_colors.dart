@@ -23,4 +23,6 @@ abstract class AppColors {
   static const Color textBlueColor = Color(0xFF0093AD);
   static const Color textBlackColor400 = Color(0xFF8E8E8E);
   static const Color blueSkyColor = Color(0xFFEBF6F8);
+
+  static const Color disabledButtonBgColor = Color(0xFF698CBF);
 }

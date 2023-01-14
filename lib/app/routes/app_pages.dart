@@ -2,8 +2,6 @@ import 'package:get/get.dart';
 
 import '../modules/detail_news/bindings/detail_news_binding.dart';
 import '../modules/detail_news/views/detail_news_view.dart';
-import '../modules/main/bindings/main_binding.dart';
-import '../modules/main/views/main_view.dart';
 import '../modules/news/bindings/news_binding.dart';
 import '../modules/news/views/news_view.dart';
 
@@ -16,11 +14,6 @@ class AppPages {
 
   static final routes = [
     GetPage(
-      name: _Paths.MAIN,
-      page: () => MainView(),
-      binding: MainBinding(),
-    ),
-    GetPage(
       name: _Paths.NEWS,
       page: () => NewsView(),
       binding: NewsBinding(),
@@ -28,6 +21,7 @@ class AppPages {
     GetPage(
       name: _Paths.DETAIL_NEWS,
       page: () => DetailNewsView(),
+      transition: Transition.noTransition,
       binding: DetailNewsBinding(),
     ),
   ];

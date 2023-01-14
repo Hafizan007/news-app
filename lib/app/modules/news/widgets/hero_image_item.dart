@@ -23,6 +23,7 @@ class HeroImageItem extends StatelessWidget {
           child: FancyShimmerImage(
             imageUrl: imageUrl ?? '',
             boxFit: BoxFit.cover,
+            alignment: Alignment.topCenter,
             height: AppValues.newsHeroImageHeight,
             width: double.maxFinite,
             errorWidget: const Center(

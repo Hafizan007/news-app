@@ -1,12 +1,12 @@
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:get/get.dart';
 import 'package:technical_test/app/core/base/base_controller.dart';
-import 'package:technical_test/app/data/model/news_response.dart';
 
 import '../../../core/values/app_values.dart';
+import '../../news/models/news_ui_data.dart';
 
 class DetailNewsController extends BaseController {
-  Article? article;
+  late NewsUiData news;
   URLRequest? initialUrlRequest;
   InAppWebViewController? webViewController2;
   HeadlessInAppWebView? headlessWebView;
@@ -17,7 +17,7 @@ class DetailNewsController extends BaseController {
 
   @override
   void onInit() {
-    article = Get.arguments;
+    news = Get.arguments;
     setupWebview();
     runWebview();
     super.onInit();
@@ -30,7 +30,7 @@ class DetailNewsController extends BaseController {
   }
 
   void setupWebview() {
-    initialUrlRequest = URLRequest(url: WebUri(article?.url ?? ''));
+    initialUrlRequest = URLRequest(url: WebUri(news.newsUrl));
 
     for (final adUrlFilter in AppValues.adUrlFilters) {
       contentBlockers.add(

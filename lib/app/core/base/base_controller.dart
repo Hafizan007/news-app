@@ -56,7 +56,6 @@ abstract class BaseController extends GetxController {
 
   showSuccessMessage(String msg) => _successMessageController(msg);
 
-  // ignore: long-parameter-list
   dynamic callDataService<T>(
     Future<T> future, {
     Function(Exception exception)? onError,

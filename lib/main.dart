@@ -17,7 +17,7 @@ void main() async {
   );
 
   BuildConfig.instantiate(
-    envType: Environment.DEVELOPMENT,
+    envType: Environment.PRODUCTION,
     envConfig: devConfig,
   );
 

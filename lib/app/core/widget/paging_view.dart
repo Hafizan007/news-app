@@ -12,7 +12,7 @@ class PagingView extends StatelessWidget {
 
   ScrollController? scrollController;
 
-  late final _debouncer = Debouncer(milliseconds: 200);
+  late final _debouncer = Debouncer(milliseconds: 100);
 
   PagingView({
     Key? key,

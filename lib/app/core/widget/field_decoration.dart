@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:technical_test/app/core/values/app_values.dart';
 
 import '../../core/values/app_colors.dart';
 
@@ -20,7 +21,7 @@ class FieldDecoration extends InputDecoration {
   });
 
   Color get _enableBorder {
-    return AppColors.fieldBorderColor;
+    return AppColors.elevatedContainerColorOpacity;
   }
 
   Color get _fillColor {
@@ -69,7 +70,7 @@ class FieldDecoration extends InputDecoration {
   @override
   InputBorder? get border {
     return const OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(4)),
+      borderRadius: BorderRadius.all(Radius.circular(AppValues.radius_12)),
     );
   }
 
@@ -77,7 +78,8 @@ class FieldDecoration extends InputDecoration {
   InputBorder? get enabledBorder {
     return OutlineInputBorder(
       borderSide: BorderSide(color: _enableBorder),
-      borderRadius: const BorderRadius.all(Radius.circular(4)),
+      borderRadius:
+          const BorderRadius.all(Radius.circular(AppValues.radius_12)),
     );
   }
 
@@ -85,7 +87,8 @@ class FieldDecoration extends InputDecoration {
   InputBorder? get focusedBorder {
     return OutlineInputBorder(
       borderSide: BorderSide(color: _focusColor),
-      borderRadius: const BorderRadius.all(Radius.circular(4)),
+      borderRadius:
+          const BorderRadius.all(Radius.circular(AppValues.radius_12)),
     );
   }
 

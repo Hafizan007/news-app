@@ -21,67 +21,74 @@ class NewsItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
-        decoration: BoxDecoration(
-          color: AppColors.whiteColor,
+    return Container(
+      decoration: BoxDecoration(
+        color: AppColors.whiteColor,
+        borderRadius: BorderRadius.circular(AppValues.radius_10),
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 6,
+            spreadRadius: 0,
+            color: Colors.grey.shade200,
+            offset: const Offset(0, 4),
+          )
+        ],
+      ),
+      child: Material(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(AppValues.radius_10),
+        child: InkWell(
           borderRadius: BorderRadius.circular(AppValues.radius_10),
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 6,
-              spreadRadius: 0,
-              color: Colors.grey.shade200,
-              offset: const Offset(0, 4),
-            )
-          ],
-        ),
-        padding: const EdgeInsets.all(AppValues.padding_12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            HeroImageItem(
-              imageUrl: imageUrl,
-              source: source,
-            ),
-            const SizedBox(height: AppValues.height_4),
-            Text(
-              title ?? '',
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              style: AppTextStyle.mediumText(
-                fontWeight: FontWeight.w500,
-                color: AppColors.textColorSecondary,
-              ),
-            ),
-            const SizedBox(height: AppValues.height_8),
-            Text(
-              shortDesc ?? '',
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
-              style: AppTextStyle.smallText(
-                fontWeight: FontWeight.w300,
-                color: AppColors.textBlackColor400,
-              ),
-            ),
-            const SizedBox(height: AppValues.height_12),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          onTap: onTap,
+          child: Padding(
+            padding: const EdgeInsets.all(AppValues.padding_12),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Read More',
-                  style: AppTextStyle.smallTextUnderline(),
+                HeroImageItem(
+                  imageUrl: imageUrl,
+                  source: source,
                 ),
+                const SizedBox(height: AppValues.height_4),
                 Text(
-                  DateHelper.strDateToStrDate(date ?? ''),
+                  title ?? '',
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: AppTextStyle.mediumText(
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.textColorSecondary,
+                  ),
+                ),
+                const SizedBox(height: AppValues.height_8),
+                Text(
+                  shortDesc ?? '',
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
                   style: AppTextStyle.smallText(
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w300,
                     color: AppColors.textBlackColor400,
                   ),
                 ),
+                const SizedBox(height: AppValues.height_12),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Read More',
+                      style: AppTextStyle.smallTextUnderline(),
+                    ),
+                    Text(
+                      DateHelper.strDateToStrDate(date ?? ''),
+                      style: AppTextStyle.smallText(
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.textBlackColor400,
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
-          ],
+          ),
         ),
       ),
     );

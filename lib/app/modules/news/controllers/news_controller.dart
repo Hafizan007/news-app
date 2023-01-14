@@ -13,6 +13,8 @@ class NewsController extends BaseController {
   final searchTextController = TextEditingController();
   final pagingController = PagingController<Article>();
   final isError = false.obs;
+  NewsCategory category = NewsCategory.technology;
+  NewsCountry country = NewsCountry.us;
 
   List<Article> get newsList => _newsListController.toList();
 
@@ -30,6 +32,8 @@ class NewsController extends BaseController {
     final queryParams = NewsQueryParams(
       page: pagingController.pageNumber,
       search: searchTextController.text,
+      category: category,
+      country: country,
     );
     final service = _repository.getListNews(queryParams);
 
@@ -81,4 +85,32 @@ class NewsController extends BaseController {
     pagingController.initRefresh();
     fetchListNews();
   }
+
+  void onTap() {
+    pagingController.initRefresh();
+    fetchListNews();
+    Get.back();
+  }
+
+  void onChangeCategory(bool? value, NewsCategory categoryValue) {
+    category = categoryValue;
+    update();
+  }
+
+  void onChangeCountry(bool? value, NewsCountry countryValue) {
+    country = countryValue;
+    update();
+  }
+}
+
+enum NewsCategory {
+  business,
+  general,
+  technology,
+}
+
+enum NewsCountry {
+  gb,
+  us,
+  id,
 }

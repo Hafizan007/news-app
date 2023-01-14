@@ -7,7 +7,7 @@ abstract class AppValues {
   //network
   static const int defaultPageSize = 10;
   static const int defaultPageNumber = 1;
-  static const int defaultDebounceTimeInMilliSeconds = 1000;
+  static const int defaultDebounceTimeInMilliSeconds = 500;
   static const int defaultThrottleTimeInMilliSeconds = 500;
 
   //margin
@@ -49,6 +49,7 @@ abstract class AppValues {
   static const double mediumTextSize = 14;
   static const double largeTextSize = 16;
 
+  static const double height_24 = 24;
   static const double height_16 = 16;
   static const double height_12 = 12;
   static const double height_10 = 10;
@@ -71,6 +72,7 @@ abstract class AppValues {
 
   //icon
   static const double iconSize5 = 5;
+  static const double iconSize20 = 20;
 
   //image
   static const double newsHeroImageHeight = 114;
@@ -90,4 +92,8 @@ abstract class AppValues {
     ".*.teads.tv/.*",
     ".*.outbrain.com/.*"
   ];
+
+  static const double minButtonHeigh = 44;
+
+  static const double iconDefaultSize = 24;
 }

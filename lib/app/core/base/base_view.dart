@@ -10,7 +10,6 @@ import '/app/core/values/app_colors.dart';
 import '/flavors/build_config.dart';
 import '../widget/loading.dart';
 
-// ignore: use_key_in_widget_constructors
 abstract class BaseView<Controller extends BaseController>
     extends GetView<Controller> {
   final GlobalKey<ScaffoldState> globalKey = GlobalKey<ScaffoldState>();

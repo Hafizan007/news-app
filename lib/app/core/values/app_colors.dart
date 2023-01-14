@@ -6,9 +6,9 @@ abstract class AppColors {
   static const Color appBarTextColor = Color(0xFFFFFFFF);
 
   static const Color pageBackground = Color(0xFFF4F7FC);
-  static const MaterialColor colorPrimarySwatch = Colors.cyan;
+  static const MaterialColor colorPrimarySwatch = Colors.blue;
   static const Color colorPrimary = Color(0xFF335993);
-  static const Color colorSecondary = Color(0xFFFFC56D);
+  static const Color colorSecondary = Color.fromARGB(255, 80, 131, 208);
   static Color elevatedContainerColorOpacity = Colors.grey.withOpacity(0.5);
 
   static const Color textColorPrimary = Color(0xFF585858);

@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/detail_news/bindings/detail_news_binding.dart';
+import '../modules/detail_news/views/detail_news_view.dart';
 import '../modules/main/bindings/main_binding.dart';
 import '../modules/main/views/main_view.dart';
 import '../modules/news/bindings/news_binding.dart';
@@ -22,6 +24,11 @@ class AppPages {
       name: _Paths.NEWS,
       page: () => NewsView(),
       binding: NewsBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAIL_NEWS,
+      page: () => DetailNewsView(),
+      binding: DetailNewsBinding(),
     ),
   ];
 }

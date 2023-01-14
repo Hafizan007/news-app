@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:technical_test/app/core/values/app_values.dart';
+import 'package:technical_test/app/routes/app_pages.dart';
 
 import '../../../core/base/base_view.dart';
 import '../../../core/widget/custom_app_bar.dart';
@@ -52,7 +53,10 @@ class NewsView extends BaseView<NewsController> {
                       date: itemView.publishedAt,
                       imageUrl: itemView.urlToImage,
                       source: itemView.source?.name,
-                      onTap: () {},
+                      onTap: () => Get.toNamed(
+                        Routes.DETAIL_NEWS,
+                        arguments: itemView,
+                      ),
                     );
                   }),
             );

@@ -25,7 +25,6 @@ class _MyAppState extends State<MyApp> {
       initialBinding: InitialBinding(),
       getPages: AppPages.routes,
       theme: ThemeData(
-        primarySwatch: AppColors.colorPrimarySwatch,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         brightness: Brightness.light,
         primaryColor: AppColors.colorPrimary,

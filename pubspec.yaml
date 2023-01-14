@@ -16,6 +16,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cached_network_image: ^3.2.1
+  chaleno: ^0.0.6
   cupertino_icons: ^1.0.2
   dio: ^4.0.5
   equatable: ^2.0.5
@@ -23,10 +24,11 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_dotenv: ^5.0.2
+  flutter_inappwebview: ^6.0.0-beta.21
   flutter_keyboard_visibility: ^5.2.0
   flutter_localization: ^0.1.9
   flutter_spinkit: ^5.1.0
-  flutter_svg: ^1.1.6
+  flutter_widget_from_html_core: ^0.8.5+3
   fluttertoast: ^8.1.1
   font_awesome_flutter: ^10.2.1
   get: ^4.6.5

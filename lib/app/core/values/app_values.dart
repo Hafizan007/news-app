@@ -74,4 +74,20 @@ abstract class AppValues {
 
   //image
   static const double newsHeroImageHeight = 114;
+
+  static const List<String> adUrlFilters = [
+    ".*.doubleclick.net/.*",
+    ".*.ads.pubmatic.com/.*",
+    ".*.googlesyndication.com/.*",
+    ".*.google-analytics.com/.*",
+    ".*.adservice.google.*/.*",
+    ".*.adbrite.com/.*",
+    ".*.exponential.com/.*",
+    ".*.quantserve.com/.*",
+    ".*.scorecardresearch.com/.*",
+    ".*.zedo.com/.*",
+    ".*.adsafeprotected.com/.*",
+    ".*.teads.tv/.*",
+    ".*.outbrain.com/.*"
+  ];
 }

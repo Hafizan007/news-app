@@ -41,7 +41,7 @@ class ButtonFill extends StatelessWidget {
     this.minHeight = AppValues.minButtonHeigh,
     this.borderWidth = 1,
     this.fontWeight = FontWeight.w700,
-    this.radius = 0,
+    this.radius = AppValues.smallRadius,
     this.prefixIcon,
     this.prefixIconPadding = 8,
     this.suffixIcon,

@@ -21,6 +21,7 @@ class AppPages {
     GetPage(
       name: _Paths.DETAIL_NEWS,
       page: () => DetailNewsView(),
+      transition: Transition.noTransition,
       binding: DetailNewsBinding(),
     ),
   ];

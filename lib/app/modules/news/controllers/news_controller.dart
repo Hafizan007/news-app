@@ -6,17 +6,19 @@ import 'package:technical_test/app/data/repository/news_repository.dart';
 
 import '../../../core/base/paging_controller.dart';
 import '../../../data/model/news_response.dart';
+import '../models/news_ui_data.dart';
 
 class NewsController extends BaseController {
   final NewsRepository _repository = Get.find(tag: (NewsRepository).toString());
-  final RxList<Article> _newsListController = RxList.empty();
+  final RxList<NewsUiData> _newsListController = RxList.empty();
   final searchTextController = TextEditingController();
-  final pagingController = PagingController<Article>();
+  final pagingController = PagingController<NewsUiData>();
   final isError = false.obs;
+
   NewsCategory category = NewsCategory.technology;
   NewsCountry country = NewsCountry.us;
 
-  List<Article> get newsList => _newsListController.toList();
+  List<NewsUiData> get newsList => _newsListController.toList();
 
   @override
   void onInit() {
@@ -47,19 +49,35 @@ class NewsController extends BaseController {
   }
 
   void _handleListNewsesponseSuccess(NewsResponse response) {
+    List<NewsUiData>? newsList = parseResponse(response.articles);
+
     final isLastPage = _isLastPage(
-      response.articles!.length,
+      newsList!.length,
       response.totalResults!,
     );
 
     if (isLastPage) {
-      pagingController.appendLastPage(response.articles!);
+      pagingController.appendLastPage(newsList);
     } else {
-      pagingController.appendPage(response.articles!);
+      pagingController.appendPage(newsList);
     }
 
     final newList = [...pagingController.listItems];
     _newsListController(newList);
+  }
+
+  List<NewsUiData>? parseResponse(List<Article>? articles) {
+    return articles
+        ?.map((e) => NewsUiData(
+              title: e.title ?? "-",
+              imageUrl: e.urlToImage ?? "-",
+              newsUrl: e.url ?? "-",
+              description: e.description ?? "",
+              content: e.content ?? "",
+              publishedAt: e.publishedAt ?? "",
+              sourceName: e.source?.name ?? "",
+            ))
+        .toList();
   }
 
   void _handleListNewsFailed(Exception exception) {
@@ -86,7 +104,7 @@ class NewsController extends BaseController {
     fetchListNews();
   }
 
-  void onTap() {
+  void onSubmitFilter() {
     pagingController.initRefresh();
     fetchListNews();
     Get.back();
@@ -104,13 +122,19 @@ class NewsController extends BaseController {
 }
 
 enum NewsCategory {
+  technology,
   business,
   general,
-  technology,
+  entertainment,
+  health,
+  science,
+  sports
 }
 
 enum NewsCountry {
   gb,
   us,
   id,
+  kr,
+  jp,
 }

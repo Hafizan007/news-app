@@ -10,7 +10,7 @@ import '../controllers/detail_news_controller.dart';
 class DetailNewsView extends BaseView<DetailNewsController> {
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
-    return CustomAppBar(appBarTitleText: controller.article?.title ?? '');
+    return CustomAppBar(appBarTitleText: controller.news.title);
   }
 
   @override

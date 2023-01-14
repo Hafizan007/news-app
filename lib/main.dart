@@ -11,7 +11,7 @@ void main() async {
   await dotenv.load(fileName: ".env");
 
   EnvConfig devConfig = EnvConfig(
-    appName: "Technical Test",
+    appName: "Headline News",
     baseUrl: dotenv.env['BASE_URL'] ?? "",
     shouldCollectCrashLog: true,
   );

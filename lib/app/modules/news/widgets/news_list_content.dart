@@ -13,28 +13,30 @@ class NewsListContent extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.find<NewsController>();
 
-    return ListView.separated(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      itemCount: controller.newsList.length,
-      padding: const EdgeInsets.symmetric(horizontal: AppValues.padding),
-      separatorBuilder: (context, index) =>
-          const SizedBox(height: AppValues.height_16),
-      itemBuilder: (context, index) {
-        final itemView = controller.newsList[index];
+    return Obx(() {
+      return ListView.separated(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        itemCount: controller.newsList.length,
+        padding: const EdgeInsets.symmetric(horizontal: AppValues.padding),
+        separatorBuilder: (context, index) =>
+            const SizedBox(height: AppValues.height_16),
+        itemBuilder: (context, index) {
+          final itemView = controller.newsList[index];
 
-        return NewsItem(
-          title: itemView.title,
-          shortDesc: itemView.description,
-          date: itemView.publishedAt,
-          imageUrl: itemView.urlToImage,
-          source: itemView.source?.name,
-          onTap: () => Get.toNamed(
-            Routes.DETAIL_NEWS,
-            arguments: itemView,
-          ),
-        );
-      },
-    );
+          return NewsItem(
+            title: itemView.title,
+            shortDesc: itemView.description,
+            date: itemView.publishedAt,
+            imageUrl: itemView.imageUrl,
+            source: itemView.sourceName,
+            onTap: () => Get.toNamed(
+              Routes.DETAIL_NEWS,
+              arguments: itemView,
+            ),
+          );
+        },
+      );
+    });
   }
 }

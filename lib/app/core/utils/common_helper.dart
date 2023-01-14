@@ -1,9 +1,21 @@
-class CommonHelper {
-  static String capitalize(String string) {
-    if (string.isEmpty) {
-      return string;
-    }
+import 'package:technical_test/app/modules/news/controllers/news_controller.dart';
 
-    return string[0].toUpperCase() + string.substring(1);
+class CommonHelper {
+  static String countryName(NewsCountry country) {
+    switch (country) {
+      case NewsCountry.id:
+        return 'Indonesian';
+      case NewsCountry.us:
+        return 'United States';
+      case NewsCountry.gb:
+        return 'United Kingdom';
+      case NewsCountry.kr:
+        return 'South Korean';
+      case NewsCountry.jp:
+        return 'Japan';
+
+      default:
+        return '';
+    }
   }
 }

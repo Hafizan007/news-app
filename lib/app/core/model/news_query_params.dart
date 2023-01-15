@@ -1,6 +1,5 @@
-import 'package:technical_test/app/modules/news/controllers/news_controller.dart';
-
 import '../values/app_values.dart';
+import '../values/news_values.dart';
 
 class NewsQueryParams {
   int page;

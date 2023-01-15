@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:technical_test/app/core/values/app_values.dart';
 
 import '../../../core/base/base_view.dart';
@@ -32,17 +32,18 @@ class NewsView extends BaseView<NewsController> {
           ),
         ),
         Expanded(
-          child: PagingView(
-            onLoadNextPage: controller.onLoadNextPage,
-            onRefresh: controller.onRefresh,
-            child: Obx(() {
-              return Visibility(
+          child: Obx(() {
+            return PagingView(
+              isLoading: controller.isPagingLoading.value,
+              onLoadNextPage: controller.onLoadNextPage,
+              onRefresh: controller.onRefresh,
+              child: Visibility(
                 visible: !controller.isError.value,
                 replacement: const NewsErrorHandle(),
                 child: const NewsListContent(),
-              );
-            }),
-          ),
+              ),
+            );
+          }),
         ),
       ],
     );

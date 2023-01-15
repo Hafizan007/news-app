@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import '../../../core/utils/common_helper.dart';
 import '../../../core/values/app_text_styles.dart';
 import '../../../core/values/app_values.dart';
+import '../../../core/values/news_values.dart';
 import '../../../core/widget/bottomsheet/custom_selector_sheet.dart';
 import '../../../core/widget/button/button_fiill.dart';
 import '../controllers/news_controller.dart';

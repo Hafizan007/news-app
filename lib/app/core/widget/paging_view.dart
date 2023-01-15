@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:technical_test/app/core/values/app_colors.dart';
 
 import '/app/core/utils/debouncer.dart';
-import '/app/core/values/app_values.dart';
+import '../values/app_values.dart';
 
 ///ignore: must_be_immutable
 class PagingView extends StatelessWidget {
   final Widget child;
   final Function() onLoadNextPage;
   final Future<void> Function()? onRefresh;
+  final bool isLoading;
 
   ScrollController? scrollController;
 
@@ -20,6 +22,7 @@ class PagingView extends StatelessWidget {
     required this.onLoadNextPage,
     this.onRefresh,
     this.scrollController,
+    required this.isLoading,
   }) : super(key: key) {
     scrollController ??= ScrollController();
   }
@@ -61,7 +64,18 @@ class PagingView extends StatelessWidget {
       child: Column(
         children: [
           child,
-          const SizedBox(height: AppValues.listBottomEmptySpace),
+          SizedBox(
+            height: AppValues.listBottomEmptySpace,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                isLoading
+                    ? const CircularProgressIndicator(
+                        color: AppColors.colorPrimary)
+                    : const SizedBox(),
+              ],
+            ),
+          ),
         ],
       ),
     );

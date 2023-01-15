@@ -1,4 +1,4 @@
-import 'package:technical_test/app/modules/news/controllers/news_controller.dart';
+import '../values/news_values.dart';
 
 class CommonHelper {
   static String countryName(NewsCountry country) {

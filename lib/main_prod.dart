@@ -10,7 +10,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
 
-  EnvConfig devConfig = EnvConfig(
+  EnvConfig prodConfig = EnvConfig(
     appName: "Headline News",
     baseUrl: dotenv.env['BASE_URL'] ?? "",
     shouldCollectCrashLog: true,
@@ -18,7 +18,7 @@ void main() async {
 
   BuildConfig.instantiate(
     envType: Environment.PRODUCTION,
-    envConfig: devConfig,
+    envConfig: prodConfig,
   );
 
   runApp(const MyApp());

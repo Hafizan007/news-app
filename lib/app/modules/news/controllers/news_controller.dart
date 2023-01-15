@@ -116,6 +116,7 @@ class NewsController extends BaseController {
 
   Future<void> onRefresh() async {
     pagingController.initRefresh();
+    isError(false);
     fetchListNews();
   }
 

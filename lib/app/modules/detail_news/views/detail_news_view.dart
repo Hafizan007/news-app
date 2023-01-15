@@ -27,7 +27,7 @@ class DetailNewsView extends BaseView<DetailNewsController> {
           headlessWebView: controller.headlessWebView,
           onWebViewCreated: (ctrl) {
             controller.headlessWebView = null;
-            controller.webViewController2 = ctrl;
+            controller.webViewController = ctrl;
           },
         ),
       );

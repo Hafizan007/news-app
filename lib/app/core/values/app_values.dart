@@ -76,6 +76,7 @@ abstract class AppValues {
 
   //image
   static const double newsHeroImageHeight = 114;
+  static const double errorImageWidth = 300;
 
   static const List<String> adUrlFilters = [
     ".*.doubleclick.net/.*",

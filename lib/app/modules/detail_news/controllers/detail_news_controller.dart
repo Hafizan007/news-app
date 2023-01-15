@@ -8,7 +8,7 @@ import '../../news/models/news_ui_data.dart';
 class DetailNewsController extends BaseController {
   late NewsUiData news;
   URLRequest? initialUrlRequest;
-  InAppWebViewController? webViewController2;
+  InAppWebViewController? webViewController;
   HeadlessInAppWebView? headlessWebView;
 
   final List<ContentBlocker> contentBlockers = [];
@@ -59,7 +59,7 @@ class DetailNewsController extends BaseController {
       initialUrlRequest: initialUrlRequest,
       onProgressChanged: updateLoading,
       onWebViewCreated: (controller) {
-        webViewController2 = controller;
+        webViewController = controller;
       },
       initialSettings: InAppWebViewSettings(
         contentBlockers: contentBlockers,

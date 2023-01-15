@@ -18,7 +18,7 @@ class NewsFilter extends StatelessWidget {
     final controller = Get.find<NewsController>();
 
     return CustomSelectorSheet(
-      title: 'Status',
+      title: 'Filter',
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,

@@ -16,7 +16,6 @@ class AppTextStyle {
     );
   }
 
-  //Text Sized
   static TextStyle smallText({
     Color color = AppColors.textColorPrimary,
     FontWeight fontWeight = FontWeight.w300,

@@ -19,7 +19,7 @@ class NewsController extends BaseController {
   bool isLoadNextPage = false;
 
   NewsCategory category = NewsCategory.technology;
-  NewsCountry country = NewsCountry.us;
+  NewsCountry country = NewsCountry.id;
 
   final pagingController = PagingController<NewsUiData>();
   final RxList<NewsUiData> _newsListController = RxList.empty();

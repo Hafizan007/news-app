@@ -21,19 +21,17 @@ class CustomSelectorSheet extends StatelessWidget {
       constraints: BoxConstraints(
         maxHeight: context.height * 0.75,
       ),
-      padding: EdgeInsets.only(
+      padding: const EdgeInsets.only(
         top: AppValues.largePadding,
-        bottom: context.mediaQueryViewPadding.bottom > 0
-            ? context.mediaQueryViewPadding.bottom
-            : 20,
+        bottom: AppValues.largePadding,
         left: AppValues.padding,
         right: AppValues.padding,
       ),
       decoration: const BoxDecoration(
         color: AppColors.pageBackground,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
+          topLeft: Radius.circular(AppValues.radius_20),
+          topRight: Radius.circular(AppValues.radius_20),
         ),
       ),
       child: Column(
@@ -46,7 +44,7 @@ class CustomSelectorSheet extends StatelessWidget {
               Expanded(
                 child: Text(
                   title,
-                  style: AppTextStyle.mediumText(fontWeight: FontWeight.w700),
+                  style: AppTextStyle.largeText(fontWeight: FontWeight.w700),
                   textAlign: TextAlign.center,
                 ),
               ),

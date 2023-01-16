@@ -18,21 +18,21 @@ class NewsFilter extends StatelessWidget {
     final controller = Get.find<NewsController>();
 
     return CustomSelectorSheet(
-      title: 'Status',
+      title: 'Filter',
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
             'Category',
-            style: AppTextStyle.mediumText(fontWeight: FontWeight.w700),
+            style: AppTextStyle.mediumText(fontWeight: FontWeight.w600),
           ),
           const SizedBox(height: AppValues.height_16),
           Wrap(
             direction: Axis.horizontal,
             runAlignment: WrapAlignment.start,
-            runSpacing: 12.0,
-            spacing: 10.0,
+            runSpacing: AppValues.padding_12,
+            spacing: AppValues.smallPadding,
             children: List.generate(NewsCategory.values.length, (index) {
               final category = NewsCategory.values[index];
 
@@ -51,7 +51,7 @@ class NewsFilter extends StatelessWidget {
           const SizedBox(height: AppValues.height_24),
           Text(
             'Country',
-            style: AppTextStyle.mediumText(fontWeight: FontWeight.w700),
+            style: AppTextStyle.mediumText(fontWeight: FontWeight.w600),
           ),
           const SizedBox(height: AppValues.height_16),
           Wrap(

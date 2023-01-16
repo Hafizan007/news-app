@@ -39,6 +39,7 @@ abstract class AppValues {
   static const double radius_4 = 4;
   static const double radius_6 = 6;
   static const double radius_12 = 12;
+  static const double radius_20 = 20;
   static const double radius_10 = 10;
 
   //list
@@ -76,6 +77,7 @@ abstract class AppValues {
 
   //image
   static const double newsHeroImageHeight = 114;
+  static const double errorImageWidth = 300;
 
   static const List<String> adUrlFilters = [
     ".*.doubleclick.net/.*",

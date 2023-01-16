@@ -13,20 +13,16 @@ class DetailNewsController extends BaseController {
 
   final List<ContentBlocker> contentBlockers = [];
 
-  final isFinisLoaded = false.obs;
+  final progress = 0.0.obs;
+  final isError = false.obs;
+
+  bool get isShowLoading => progress.value < 1 && progress.value != 0.0;
 
   @override
   void onInit() {
     news = Get.arguments;
     setupWebview();
-    runWebview();
     super.onInit();
-  }
-
-  @override
-  void onClose() {
-    headlessWebView?.dispose();
-    super.onClose();
   }
 
   void setupWebview() {
@@ -55,25 +51,30 @@ class DetailNewsController extends BaseController {
         ),
       ),
     );
-    headlessWebView = HeadlessInAppWebView(
-      initialUrlRequest: initialUrlRequest,
-      onProgressChanged: updateLoading,
-      onWebViewCreated: (controller) {
-        webViewController = controller;
-      },
-      initialSettings: InAppWebViewSettings(
-        contentBlockers: contentBlockers,
-      ),
-    );
-  }
-
-  void runWebview() async {
-    await headlessWebView?.run();
   }
 
   void updateLoading(InAppWebViewController controller, int value) {
-    if (value > 10) {
-      isFinisLoaded(true);
+    progress.value = value / 100;
+  }
+
+  void updateError(
+    InAppWebViewController controller,
+    WebResourceRequest webResourceRequest,
+    WebResourceError webResourceError,
+  ) {
+    bool isConnectionError =
+        webResourceError.description == 'net::ERR_ADDRESS_UNREACHABLE';
+    print(webResourceError);
+
+    if (isConnectionError) isError(true);
+  }
+
+  void refreshWebview() {
+    isError(false);
+    try {
+      webViewController?.reload();
+    } catch (e) {
+      return;
     }
   }
 }
